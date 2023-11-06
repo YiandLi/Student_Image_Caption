@@ -3,6 +3,8 @@ Name: Yiin.Liu
 
 Mail: Yliu8258@usc.edu
 
+Recommend view with githhub : [https://github.com/YiandLi/Student_Image_Caption/edit/main/README.md](https://github.com/YiandLi/Student_Image_Caption/edit/main/README.md)
+
 --- 
 
 # Description
