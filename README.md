@@ -35,6 +35,15 @@ For instance, one approach is to combine various tasks to train a multi-modal mo
 
 3. Other solutions: Utilize a combination of rule-based and deep learning methods to improve the model's understanding of geometric and algebraic concepts, allowing it to generate more contextually relevant and accurate descriptions.
 
+## Fine-tuned Checkpoint
+The trained model is in the folder: `output/checkpoint_best.pth` of size 2.69 GB .
+
+Or download with:
+```
+wget https://www.kaggleusercontent.com/kf/149532039/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..zE4geo0b-Ds2GtEfjWiRQA.SQocM1U6OLJEKxauiq42KPKtKVMaLtLFWDEYJSmlWbPLESYhdxmGHTI4QnuKGGx7hXJOBWtdinIUj-q3bdkQoBr09MFpTJiaWEel8YUmhwYYH2DCJOLHSWfsjMCiUUfEILJ5omel8C5EKmJdcdXzH6XQT1MtOa1jxcBN8bCw02HeVPmFP022Xa0cUYTJAgeZmF34q9P4jFFCR7FWAAtWpD9SnFoBWdLkZu_m0PBsOu47etasK39fdToTOeUZSIC3dROSu0sRZ2k79QoKcjSouOcVG36zw-FtliT0FluIz9Z9zuBrFpx_Z9efkLGJBivQXUQRUPxYCP9ZPuEQlWlfjRpq-LgwC7Zt-aHrKHsD_o2EKN42LnuQYVwgvNk_NFa3sZWbjv_98E9OFR1XMWMcaYkRs6kgw8o6QY6BQjn-Cs0vnpoct0e_y8q4GgwMPUOZXteADhBAvLKzeEHb8MTh2AhIvJjkTUrvwVAehhLi2WBlhP11qjClIpKDMDn_dVafZuntyRUxPTreSQrZdxvSCDAhAgwLJOJKqDNgTyw0VyALXPd8Qr0I2ZtwrAOfXlJnwn73p5U_PIsVjOY9e1Z_Q_PIzO6q23ry6YvqcdzyRgbkusc2xr9t6gISqWHFmG7Nbcv1__YY0UOxzOMKG-iYQ2gQ1BBq0BOeC7_k-wG0X0o.9SEUlFOjJtNTSK5q6ttXGw/Student_Image_Caption/output/checkpoint_best.pth
+```
+
+
 # requirement
 ```
 transformers-4.34.1
