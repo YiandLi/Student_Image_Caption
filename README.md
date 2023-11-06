@@ -25,7 +25,7 @@ python src/train_caption.py
 # Result
 ## Configuration
 
-I use batchsize 8, epoch 50, random shuffle dataloader w/o bootstrap, with metric BLEU-3, BLEU-4, ROUGE and CIDEr \
+I use batchsize 8, epoch 50, random shuffle dataloader w/o bootstrap, to fine-tune vit-base combined with capfilt_large module,with metric BLEU-3, BLEU-4, ROUGE and CIDEr \
 and choose the best checkpoiint with the highest $\text{BLEU-3} + \text{ ROUGE}$.
 
 
