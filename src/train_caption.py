@@ -115,14 +115,16 @@ def main(config):
             best_epoch = epoch
             torch.save(save_obj, os.path.join(config['output_dir'], 'checkpoint_best.pth'))
         
+        print(json.dumps(coco_val, indent=4))
+        
         log_stats = {**{f'train_{k}': v for k, v in train_stats.items()},
                      **{f'val_{k}': v for k, v in coco_val.items()},
                      'epoch': epoch,
                      'best_epoch': best_epoch,
+                     'val_result': val_result,
+                     'val_ground_true': val_ground_true
                      }
-        
         open(os.path.join(config['output_dir'], "log.txt"), "a").write(json.dumps(log_stats) + "\n")
-        print(json.dumps(log_stats, indent=4))
         
         if config['evaluate']: break
     
@@ -157,11 +159,9 @@ if __name__ == '__main__':
         'distributed': False,
         'evaluate': False,
         'output_dir': 'output/',
-        'result_dir': 'result/'
     }
     
     print(json.dumps(config, indent=4))
     Path(config['output_dir']).mkdir(parents=True, exist_ok=True)
-    Path(config['result_dir']).mkdir(parents=True, exist_ok=True)
     
     main(config)
