@@ -20,3 +20,7 @@ If you run the code for the 1st time, vit model checkpoint will be downloaded au
 ```python
 python src/train_caption.py
 ```
+
+
+
+
