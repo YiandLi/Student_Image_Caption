@@ -1,6 +1,9 @@
 import re
 import json
 import os
+
+from pycocoevalcap.cider.cider import Cider
+
 import utils
 import torch.distributed as dist
 from pycocoevalcap.spice.spice import Spice
@@ -96,9 +99,12 @@ def coco_caption_eval(references, hypotheses):
     bleu3_scores, _ = Bleu(n=3).compute_score(references, hypotheses)
     bleu3_scores = bleu3_scores[-1]
     rouge_score, _ = Rouge().compute_score(references, hypotheses)
-    # spice_score, _ = Spice().compute_score(references, hypotheses)
+    spice_score, _ = Spice().compute_score(references, hypotheses)
+    cider_score, _ = Cider().compute_score(references, hypotheses)
+    
     return {
         "bleu3": bleu3_scores,
         "rouge": rouge_score,
-        # "spice": spice_score
+        "spice": spice_score,
+        "cider": cider_score
     }
