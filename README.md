@@ -1,3 +1,10 @@
+
+Name: Yiin.Liu
+
+Mail: Yliu8258@usc.edu
+
+--- 
+
 # Description
 This task aims to prviddee actionable feedback to students' note images.
 
