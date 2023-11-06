@@ -1,4 +1,4 @@
-# description
+# Description
 This task aims to prviddee actionable feedback to students' note images.
 
 I solve it as an Image Caption Task and choose to fine tune [BLIP](https://github.com/salesforce/BLIP) on the give dataset.
