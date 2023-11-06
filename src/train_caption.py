@@ -122,6 +122,7 @@ def main(config):
                      }
         
         open(os.path.join(config['output_dir'], "log.txt"), "a").write(json.dumps(log_stats) + "\n")
+        print(json.dumps(log_stats, indent=4))
         
         if config['evaluate']: break
     
