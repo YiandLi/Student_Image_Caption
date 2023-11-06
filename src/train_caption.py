@@ -14,7 +14,6 @@ import json
 import torch
 import utils as utils
 import torch.backends.cudnn as cudnn
-import torch.distributed as dist
 
 from pathlib import Path
 from models.blip import blip_decoder
@@ -125,7 +124,6 @@ def main(config):
         open(os.path.join(config['output_dir'], "log.txt"), "a").write(json.dumps(log_stats) + "\n")
         
         if config['evaluate']: break
-        dist.barrier()
     
     total_time = time.time() - start_time
     total_time_str = str(datetime.timedelta(seconds=int(total_time)))
@@ -152,6 +150,7 @@ if __name__ == '__main__':
         'min_lr': 0,
         'max_epoch': 5,
         # args
+        'eval_ratio': 0.3,
         'seed': 42,
         'device': 'cuda' if torch.cuda.is_available() else 'cpu',
         'distributed': False,
