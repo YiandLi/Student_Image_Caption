@@ -12,11 +12,11 @@ mkdir checkpoint
 cd checkpoint
 wget https://storage.googleapis.com/sfr-vision-language-research/BLIP/models/model_base_caption_capfilt_large.pth
 ```
-If you run the code for the 1st time, vit model checkpoint will be downloaded automatically.
 
 
 
 2. run training process
+If you run the code for the 1st time, vit model checkpoint will be downloaded automatically.
 ```python
 python src/train_caption.py
 ```
