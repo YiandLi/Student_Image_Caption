@@ -96,14 +96,17 @@ def coco_caption_eval(references, hypotheses):
     bleu_scorer = Bleu(n=4)
     bleu_scores, _ = bleu_scorer.compute_score(references, hypotheses)
     """
-    bleu3_scores, _ = Bleu(n=3).compute_score(references, hypotheses)
-    bleu3_scores = bleu3_scores[-1]
+    bleu4_scores, _ = Bleu(n=4).compute_score(references, hypotheses)
+    bleu3_scores = bleu4_scores[-2]
+    bleu4_scores = bleu4_scores[-1]
+    
     rouge_score, _ = Rouge().compute_score(references, hypotheses)
     spice_score, _ = Spice().compute_score(references, hypotheses)
     cider_score, _ = Cider().compute_score(references, hypotheses)
     
     return {
         "bleu3": bleu3_scores,
+        "bleu4": bleu4_scores,
         "rouge": rouge_score,
         "spice": spice_score,
         "cider": cider_score
