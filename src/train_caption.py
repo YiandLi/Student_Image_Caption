@@ -124,10 +124,12 @@ def main(config):
                      **{f'val_{k}': v for k, v in coco_val.items()},
                      'epoch': epoch,
                      'best_epoch': best_epoch,
-                     'val_result': val_result,
-                     'val_ground_true': val_ground_true
                      }
+        
         open(os.path.join(config['output_dir'], "log.txt"), "a").write(json.dumps(log_stats) + "\n")
+        open(os.path.join(config['output_dir'], "result.txt"), "a").write(json.dumps(
+            {f'epoch_{epoch}': {'val_result': val_result, 'val_ground_true': val_ground_true}}
+        ) + "\n")
         
         if config['evaluate']: break
     
@@ -147,7 +149,7 @@ if __name__ == '__main__':
         'vit_grad_ckpt': False,
         'vit_ckpt_layer': 0,
         'batch_size': 8,
-        'init_lr': 1e-3,
+        'init_lr': 1e-5,
         'image_size': 384,
         # generation configs
         'max_length': 50,
