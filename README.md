@@ -23,7 +23,7 @@ python src/train_caption.py
 
 
 # Result
-## Configration
+## Configuration
 
 I use batchsize 8, epoch 50, random shuffle dataloader w/o bootstrap, with metric BLEU-3, BLEU-4, ROUGE and CIDEr \
 and choose the best checkpoiint with the highest $\text{BLEU-3} + \text{ ROUGE}$.
