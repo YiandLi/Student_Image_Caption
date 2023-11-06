@@ -41,7 +41,7 @@ def create_dataset(config, min_scale=0.5):
     
     train_annotation, eval_annotation = get_annotation(config['eval_ratio'])
     train_dataset = edu_karpathy(transform_train, train_annotation, prompt=config['prompt'])
-    val_dataset = edu_karpathy(transform_test, eval_annotation, prompt=config['prompt'])
+    val_dataset = edu_karpathy(transform_test, eval_annotation, prompt="")
     
     train_loader = DataLoader(
         train_dataset,
