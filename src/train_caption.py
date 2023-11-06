@@ -154,7 +154,7 @@ if __name__ == '__main__':
         'min_length': 5,
         'prompt': '',
         # optimizer
-        'weight_decay': 0.05,
+        'weight_decay': 0.02,
         'min_lr': 0,
         'max_epoch': 50,
         # args
