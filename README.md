@@ -1,3 +1,33 @@
+# description
+This task aims to prviddee actionable feedback to students' note images.
+
+I solve it as an Image Caption Task and choose to fine tune [BLIP](https://github.com/salesforce/BLIP) on the give dataset.
+
+## Model
+BLIP has shwon great performance as a backbone on different multi-modal tasks. It separates encoding of images and text. The Image Encoder is a vision transformer(Vit). For the Image-grounded text decoder, it replaces the bi-directional self-attention layers in the text encoder with causal self-attention layers. A special [Decode] token is used to signal the beginning of a sequence.
+
+When pre-training, BLIP jointly optimizes three objectives during pre-training, including two understanding-based objectives (ITC, ITM) and one generation-based objective (LM), on large-scale image-text datasets automatically collected from the web. 
+
+When do fine tune for this task, I could direcly use the pre-trained image-caption module.
+
+## Potential Drawbacks
+1. This model is pretrained on a noisy web dataset, where the web texts often inaccurately describe the visual content of the images, resulting in a noisy source of supervision.
+
+2. While the pre-trained model demonstrates high generality due to its training on a general-topic dataset, it lacks performance in this education-specific scenario.
+
+3. The images in this task are occasionally blurry and are related to geometry and algebraic problems, leading to a potential lack of prior knowledge for the model.
+
+4. The labeled descriptions in this task vary in length and mode (many of them share the common prefix "The student draws"/"x number lines"/...), which limits the complexity during fine-tuning, although it may ease the generation task.
+
+## Improvements
+
+1. For the model: Explore advanced pre-training techniques using domain-specific data related to education, which can enhance the model's performance in the education-specific scenario. So that we can incorporate transfer learnin, allowing the model to leverage task-specific knowledge and improve its performance on educational content.
+For instance, one approach is to combine various tasks to train a multi-modal model with interleaved data. This approach enables the model to develop support for multi-modal chatting abilities.
+
+2. For the data: Augment the dataset with high-quality, high-resolution images to minimize the impact of image blurriness and provide the model with clearer visual information.
+
+3. Other solutions: Utilize a combination of rule-based and deep learning methods to improve the model's understanding of geometric and algebraic concepts, allowing it to generate more contextually relevant and accurate descriptions.
+
 # requirement
 ```
 transformers-4.34.1
