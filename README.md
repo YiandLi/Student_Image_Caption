@@ -22,11 +22,19 @@ python src/train_caption.py
 
 
 
-
 # Result
-Use BLEU-3, BLEU-4, ROUGE, CIDEr
+I use batchsize 8, epoch 50, random shuffle dataloader w/o bootstrap, and choose the best checkpoiint with the highest $BLEU-3 + ROUGE$.
+
+Metric: BLEU-3, BLEU-4, ROUGE, CIDEr
 
 <img width="973" alt="image" src="https://github.com/YiandLi/Student_Image_Caption/assets/72687714/f1a9446e-8af6-4f33-b401-59a484f7899c">
+
+| Metric   |      Min |      Max |
+|:---------|---------:|---------:|
+| BLEU-3   | 0.048443 | 0.319001 |
+| BLEU-4   | 0.028146 | 0.286257 |
+| ROUGE    | 0.165428 | 0.392557 |
+| CIDEr    | 0.139804 | 1.24426  |
 
 You can download the generated caption result with :
 ```
