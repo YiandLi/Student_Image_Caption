@@ -53,14 +53,15 @@ def evaluate(model, data_loader, device, config):
     model.eval()
     result = {}
     ground_true = {}
-    for image, caption, image_id in data_loader:
+    for image, gold_captions, image_id in data_loader:
         
         image = image.to(device)
-        captions = model.generate(image, sample=True, max_length=config['max_length'], min_length=config['min_length'])
+        pred_captions = model.generate(image, sample=True, max_length=config['max_length'],
+                                       min_length=config['min_length'])
         
-        for caption, img_id, true_caption in zip(captions, image_id, caption):
-            result[str(img_id)] = [caption]
-            ground_true[str(img_id)] = [true_caption]
+        for pred_caption, gold_caption, img_id in zip(pred_captions, gold_captions, image_id):
+            result[str(img_id)] = [pred_caption]
+            ground_true[str(img_id)] = [gold_caption]
     
     return result, ground_true
 
@@ -87,6 +88,8 @@ def main(config):
     
     model = model.to(device)
     optimizer = torch.optim.AdamW(params=model.parameters(), lr=config['init_lr'], weight_decay=config['weight_decay'])
+    
+    # model.load_state_dict(torch.load('output/checkpoint_best.pth')['model'])
     
     #### Train ####
     best = 0
@@ -144,16 +147,16 @@ if __name__ == '__main__':
         'vit_grad_ckpt': False,
         'vit_ckpt_layer': 0,
         'batch_size': 8,
-        'init_lr': 1e-5,
+        'init_lr': 1e-3,
         'image_size': 384,
         # generation configs
         'max_length': 50,
         'min_length': 5,
-        'prompt': 'a picture of ',
+        'prompt': '',
         # optimizer
         'weight_decay': 0.05,
         'min_lr': 0,
-        'max_epoch': 5,
+        'max_epoch': 50,
         # args
         'eval_ratio': 0.3,
         'seed': 42,
