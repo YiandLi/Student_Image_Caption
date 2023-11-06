@@ -15,7 +15,7 @@ wget https://storage.googleapis.com/sfr-vision-language-research/BLIP/models/mod
 
 
 
-2. run training process
+2. run training process\
 If you run the code for the 1st time, vit model checkpoint will be downloaded automatically.
 ```python
 python src/train_caption.py
