@@ -54,7 +54,7 @@ def create_dataset(config, min_scale=0.5):
     
     val_loader = DataLoader(
         val_dataset,
-        batch_size=config['batch_size'],
+        batch_size=config['batch_size'] * 2,
         num_workers=1,
         pin_memory=True,
         drop_last=False,
