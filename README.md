@@ -23,3 +23,7 @@ python src/train_caption.py
 
 
 
+# Result
+Use BLEU-3, BLEU-4, ROUGE, CIDEr
+
+<img width="973" alt="image" src="https://github.com/YiandLi/Student_Image_Caption/assets/72687714/f1a9446e-8af6-4f33-b401-59a484f7899c">
