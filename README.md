@@ -9,8 +9,7 @@ pycocoevalcap-1.2
 1. dwnload the checkpoint
 ```python
 mkdir checkpoint
-cd checkpoint
-wget https://storage.googleapis.com/sfr-vision-language-research/BLIP/models/model_base_caption_capfilt_large.pth
+wget -O checkpoint/model_base_caption_capfilt_large.pth https://storage.googleapis.com/sfr-vision-language-research/BLIP/models/model_base_caption_capfilt_large.pth
 ```
 
 
