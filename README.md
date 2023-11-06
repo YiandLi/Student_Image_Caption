@@ -28,6 +28,9 @@ python src/train_caption.py
 I use batchsize 8, epoch 50, random shuffle dataloader w/o bootstrap, with metric BLEU-3, BLEU-4, ROUGE and CIDEr \
 and choose the best checkpoiint with the highest $\text{BLEU-3} + \text{ ROUGE}$.
 
+
+## Metric result
+
 <img width="973" alt="image" src="https://github.com/YiandLi/Student_Image_Caption/assets/72687714/f1a9446e-8af6-4f33-b401-59a484f7899c">
 
 | Metric   |      Min |      Max |
